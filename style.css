@@ -27,6 +27,7 @@ body {
 .display {
     border: 1px solid black;
     grid-column: span 4;
+    background-color: bisque;
 }
 .smoll-button {
     border: 1px solid black;
