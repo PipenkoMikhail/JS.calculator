@@ -65,5 +65,12 @@ body {
     grid-column-end: 5;
     border: 1px solid black;
     background-color: rgb(255, 203, 203);
+    font-size: 40px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.outputField {
+    margin: 0 15px 0 0;
 }
 
