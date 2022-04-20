@@ -1,6 +1,6 @@
-let a = ""; //first number
-let b = ""; //second number
-let sign = "";//знак операции
+let a = " "; //first number
+let b = " "; //second number
+let sign = " ";//знак операции
 let finish = false;
 
 const digit = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."];
@@ -12,9 +12,18 @@ function allClear () {
     let b = ""; //second number
     let sign = "";//знак операции
     let finish = false;
-    out.textContent = "0";
+    out.textContent = 0;
 }
-document.querySelector('.AC').onclick = allClear(); 
-
-// let num1 = Number(document.getElementByClassName('calculator-button'));
-// alert(num1);
+document.querySelector('.AC').onclick = allClear();
+document.getElementByClassName('.calculator-button').onclick = (event) {
+    if(!event.target.classList.contains('calculator-button')) return; 
+    if(event.target.classList.contains('AC')) return;
+    out.textContent = "";
+    const clickButton = event.target.textContent;
+    
+    if(digit.includes(clickButton)) {
+        a += clickButton;
+        console.log(a, b, sign);
+        out.textContent = a;
+    }
+}
