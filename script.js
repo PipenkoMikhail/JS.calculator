@@ -28,7 +28,9 @@ document.querySelector('.calculator').onclick = (event) => {
             a += clickButton;
             out.textContent = a; 
         } else if(a!=='' && b!=='' && finish) {
-
+            b = clickButton;
+            finish = false;
+            out.textContent = b;
         } else {
             b += clickButton;
             out.textContent = b;
@@ -42,5 +44,25 @@ document.querySelector('.calculator').onclick = (event) => {
         console.table(a, b, sign);
         out.textContent = sign;
         return;
+    }
+
+    if(clickButton == "=") {
+        switch(sign) {
+            case "+": 
+                a = (+a) + (+b);
+                break;
+            case "*": 
+                a = (+a) * (+b)
+                break;
+            case "-": 
+                a = (+a) - (+b)
+                break;
+            case "/": 
+                a = (+a) / (+b)
+                break;
+        }
+        out.textContent = a;
+        console.table(a, b, sigh);
+        finish = true;
     }
 }
